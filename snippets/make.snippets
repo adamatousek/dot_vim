@@ -1,0 +1,5 @@
+#Basic .o files
+snippet o
+	${1:file}.o: $1.cpp $1.hpp
+		g++ -std=c++11 -c -o $1.o $1.cpp ${2:# libraries}
+	

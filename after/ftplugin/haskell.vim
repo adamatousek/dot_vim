@@ -1,0 +1,1 @@
+hi Special ctermfg=red

@@ -1,0 +1,42 @@
+#include hpp
+snippet incp
+	#include "${1:`Filename('$1', 'name')`}.hpp"
+# Read File Into Vector
+snippet readfile
+	std::vector<char> v;
+	if (FILE *${2:fp} = fopen(${1:"filename"}, "r")) {
+		char buf[1024];
+		while (size_t len = fread(buf, 1, sizeof(buf), $2))
+			v.insert(v.end(), buf, buf + len);
+		fclose($2);
+	}${3}
+# std::map
+snippet map
+	std::map<${1:unsigned}, ${2:/* value */}> ${3:map};
+# std::vector
+snippet vector
+	std::vector<${1:char}> ${2:vec};
+# Namespace
+snippet ns
+	namespace ${1:`Filename('', 'my')`} {
+		${2}
+	} /* $1 */
+# Class
+snippet cl
+	class ${1:`Filename('$1_t', 'name')`}
+	{
+	  private:
+	    ${3:/* data */}
+	
+	  public:
+	    $1 (${2:arguments});
+	    virtual ~$1 ();
+	};
+snippet prop
+	void set_${1:property}(${2:int} ${3:n});
+	$2 get_$1() const;
+#Iterating for
+snippet fore
+	for(${1:auto} ${2:i} : ${3:array}){
+		${4:/* code */}
+	}
