@@ -1,10 +1,21 @@
+" Name:     Adamat's customised solarized vim colorscheme
+" Author:   Ethan Schoonover <es@ethanschoonover.com>
+" URL:      http://ethanschoonover.com/solarized
+"           (see this url for latest release & screenshots)
+" License:  OSI approved MIT license (see end of this file)
+" Created:  In the morning
+" Modified: 2019 May 2
+
+" Solarized settings {{{
 "let &t_Co=256
 set background=light
 let g:solarized_termtrans=1
 let g:solarized_termcolors=16    "default value is 16
 let g:solarized_degrade=0
-colo solarized
+runtime colors/solarized.vim
+" }}}
 
+" Changed colours {{{
 hi ExtraWhitespace ctermbg=darkred guibg=#382424
 "Customisations. this is spelll test, vim.
 hi Ignore ctermfg=7
@@ -45,4 +56,8 @@ hi texZone ctermfg=11
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd ctermbg=8
 hi IndentGuidesEven ctermbg=0
+"}}}
 
+let colors_name = "adamat"
+
+" vim: fdm=marker

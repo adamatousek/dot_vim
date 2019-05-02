@@ -34,7 +34,7 @@ command! FSR FSSplitRight
 command! FSL FSSplitLeft
 
 syntax enable
-runtime colorscheme.vim
+colo adamat
 
 let maplocalleader=','
 
