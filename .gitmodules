@@ -37,4 +37,5 @@
 [submodule "pack/coq/start/coq-au-vim"]
 	path = pack/coq/start/coq-au-vim
 	url = git@framagit.org:adamatousek/coq-au-vim.git
+	branch = local
 	ignore = untracked
