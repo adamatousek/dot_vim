@@ -78,6 +78,7 @@ set nojoinspaces
 set splitbelow
 set splitright
 set fillchars=vert:\ ,fold:·
+set formatoptions+=1nj
 
 "GUI
 set guioptions-=T "no toolbar

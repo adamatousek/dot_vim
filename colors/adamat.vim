@@ -56,6 +56,7 @@ hi texZone ctermfg=11
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd ctermbg=8
 hi IndentGuidesEven ctermbg=0
+hi! link SignColumn FoldColumn
 "}}}
 
 let colors_name = "adamat"
