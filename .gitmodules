@@ -12,7 +12,7 @@
 	ignore = untracked
 [submodule "pack/gen/start/surround"]
 	path = pack/gen/start/surround
-	url = https://tpope.io/vim/surround.git
+	url = https://github.com/tpope/vim-surround.git
 	ignore = untracked
 [submodule "pack/gen/start/vim-nerdtree-tabs"]
 	path = pack/gen/start/vim-nerdtree-tabs
