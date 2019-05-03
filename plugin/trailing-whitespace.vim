@@ -8,8 +8,9 @@ augroup TrailingWhitespace
     autocmd WinNew,BufWinEnter * call <SID>HighlightSetup()
 
     " The above flashes annoyingly while typing, be calmer in insert mode
-    autocmd InsertLeave * call <SID>HighlightWhitespace(0)
-    autocmd InsertEnter * call <SID>HighlightWhitespace(1)
+    " silencing because of the command window
+    autocmd InsertLeave * silent! call <SID>HighlightWhitespace(0)
+    autocmd InsertEnter * silent! call <SID>HighlightWhitespace(1)
 augroup END
 
 function! s:HighlightSetup()
