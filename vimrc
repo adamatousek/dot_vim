@@ -22,13 +22,17 @@ map <F10>  :sh<CR>
 nnoremap Y y$
 
 inoremap <C-l> <Right>
-noremap! <C-b> <C-r>"
+noremap! <C-b> <C-r>*
 cnoremap <C-a> <Home>
-tnoremap <C-n> <C-w>N
+tnoremap <C-s> <C-w>N
+inoremap <S-Tab> <C-v><C-i>
 
 " Left and right move cursor, not wildmenu selection
 cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
+
+" More reachable (and who uses Ex mode, anyway?)
+nnoremap Q  <C-w>
 
 command! FSR FSSplitRight
 command! FSL FSSplitLeft
@@ -90,7 +94,7 @@ set guioptions-=m "no menubar
 
 function! Altify( letter )
   exec "set <M-".a:letter.">=".a:letter
-  exec "imap \e".a:letter." <M-".a:letter.">"
+  "exec "imap \e".a:letter." <M-".a:letter.">"
   let c = nr2char(1+char2nr(a:letter))
 endf
 
