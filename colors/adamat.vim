@@ -29,7 +29,8 @@ hi TabLine cterm=none ctermfg=8 ctermbg=10
 hi TabLineFill cterm=none ctermfg=14 ctermbg=10
 hi TabLineSel cterm=none ctermfg=14 ctermbg=8
 hi Title  cterm=none ctermfg=3
-hi Folded cterm=italic ctermfg=magenta ctermbg=none
+hi Folded cterm=underline ctermfg=10 ctermbg=7
+hi FoldColumn ctermfg=magenta
 hi Statement cterm=none ctermfg=red
 "hi link Structure Statement
 "hi Label ctermfg=red

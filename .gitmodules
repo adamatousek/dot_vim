@@ -39,3 +39,9 @@
 	url = git@framagit.org:adamatousek/coq-au-vim.git
 	branch = local
 	ignore = untracked
+[submodule "pack/org/opt/speeddating"]
+	path = pack/org/opt/speeddating
+	url = https://github.com/tpope/vim-speeddating.git
+[submodule "pack/org/opt/calendar"]
+	path = pack/org/opt/calendar
+	url = https://github.com/mattn/calendar-vim

@@ -6,6 +6,8 @@ augroup vimrc
     au BufRead ~/src/divine/* so ~/src/divine/vimrc.local
 augroup end "augroup vimrc
 
+language messages C.UTF-8
+
 se modeline
 filetype plugin on
 filetype indent on
@@ -15,7 +17,7 @@ packadd matchit
 map <F7>   :UndotreeToggle<CR>
 map <F8>   <Plug>NERDTreeTabsToggle<CR>
 map <S-F8> :NERDTreeFind<CR>
-map <F9>   :Agrep -r<Space>
+map <F9>   <Leader>g
 map <F10>  :sh<CR>
 
 " Make Y constistent with C and D
@@ -26,19 +28,29 @@ noremap! <C-b> <C-r>*
 cnoremap <C-a> <Home>
 tnoremap <C-s> <C-w>N
 inoremap <S-Tab> <C-v><C-i>
+nnoremap <CR> o<Esc>
 
 " Left and right move cursor, not wildmenu selection
 cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
+" Agrep
+nmap <Leader>g :<C-U>Agrep -r<Space>
+nmap <Leader>] :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cn' : 'Anext')<CR>
+nmap <Leader>[ :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cp' : 'Aprev')<CR>
+
+" Repeat last : command
+nmap <Leader><Leader> @:
+
 " More reachable (and who uses Ex mode, anyway?)
-nnoremap Q  <C-w>
+nmap Q  <C-w>
+nnoremap <C-w>Q <C-w><C-w>
 
 command! FSR FSSplitRight
 command! FSL FSSplitLeft
 
-syntax enable
 colo adamat
+syntax enable
 
 let maplocalleader=','
 
@@ -81,13 +93,28 @@ set clipboard=autoselect,unnamed
 set nojoinspaces
 set splitbelow
 set splitright
-set fillchars=vert:\ ,fold:·
+set fillchars=vert:\ ,fold:\  "spaces
+set foldtext=
 set formatoptions+=1nj
+set directory=/tmp/.vimswap//,/tmp// "no swap files
 
 "GUI
 set guioptions-=T "no toolbar
 set guioptions-=m "no menubar
 
+" Fold text; based on https://dhruvasagar.com/2013/03/28/vim-better-foldtext
+function! NeatFoldText()
+    let line = substitute(foldtext(), '^.\{-\}: ', ' ', '' )
+    let lines_count = v:foldend - v:foldstart + 1
+    let max_line_number_width = len(line('$'))
+    let lines_count_text = printf('%' . max_line_number_width . 's', lines_count) . ' ↓'
+    let foldchar = matchstr(&fillchars, 'fold:\zs.')
+    let foldtextstart = strpart('＋' . repeat('−−', v:foldlevel - 1) . line, 0, (winwidth(0)*2)/3)
+    let foldtextend = lines_count_text . repeat(foldchar, 8)
+    let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+    return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+endfunction
+set foldtext=NeatFoldText()
 
 " <Esc><letter> as <M-letter>
 " Not doing this globally, because it breaks things in macros
@@ -98,11 +125,13 @@ function! Altify( letter )
   let c = nr2char(1+char2nr(a:letter))
 endf
 
-for c in ['w', 'b', 'e' ]
-    call Altify( c )
-endfo
+"for c in ['w', 'b', 'e' ]
+"    call Altify( c )
+"endfo
 
 delfunction Altify
+
+let g:tex_flavor = "latex"
 
 let g:rbpt_colorpairs = [
     \ ['52', 'DarkOrchid3'],
@@ -119,10 +148,6 @@ let g:rbpt_colorpairs = [
 "let s:a = (((((((((((((('bla'))))))))))))))
 let g:rbpt_max = 10
 let g:rbpt_loadcmd_toggle = 1
-
-nnoremap <Leader>( :RainbowParenthesesLoadRound<CR>
-nnoremap <Leader>[ :RainbowParenthesesLoadSquare<CR>
-nnoremap <Leader>] :RainbowParenthesesToggle<CR>
 
 let g:surround_117 = "„\r“"     "surround 'u'vozovky
 let g:surround_85  = "‚\r‘"     "surround 'U'
