@@ -8,7 +8,7 @@ augroup end "augroup vimrc
 
 language messages C.UTF-8
 
-se modeline
+se nomodeline
 filetype plugin on
 filetype indent on
 
