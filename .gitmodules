@@ -15,7 +15,7 @@
 	url = https://github.com/tpope/vim-surround.git
 	ignore = untracked
 [submodule "pack/gen/start/vim-nerdtree-tabs"]
-	path = pack/gen/start/vim-nerdtree-tabs
+	path = pack/gen/opt/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
 	ignore = untracked
 [submodule "pack/gen/start/vim-signify"]

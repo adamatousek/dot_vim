@@ -15,7 +15,7 @@ filetype indent on
 packadd matchit
 
 map <F7>   :UndotreeToggle<CR>
-map <F8>   <Plug>NERDTreeTabsToggle<CR>
+map <F8>   :NERDTreeToggle<CR>
 map <S-F8> :NERDTreeFind<CR>
 map <F9>   <Leader>g
 map <F10>  :sh<CR>
