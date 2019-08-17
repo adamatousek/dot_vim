@@ -42,6 +42,12 @@
 [submodule "pack/org/opt/speeddating"]
 	path = pack/org/opt/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+	ignore = untracked
 [submodule "pack/org/opt/calendar"]
 	path = pack/org/opt/calendar
 	url = https://github.com/mattn/calendar-vim
+	ignore = untracked
+[submodule "pack/gen/start/vim-latex-objects"]
+	path = pack/gen/start/vim-latex-objects
+	url = https://github.com/gibiansky/vim-latex-objects.git
+	ignore = untracked
