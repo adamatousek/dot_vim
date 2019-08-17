@@ -8,7 +8,6 @@ augroup end "augroup vimrc
 
 language messages C.UTF-8
 
-se nomodeline
 filetype plugin on
 filetype indent on
 
@@ -63,6 +62,7 @@ let NERDTreeShowHidden=1
 let NERDTreeStatusline='CWD: %{fnamemodify(getcwd(), ":~")}'
 
 "set cindent
+set modeline
 set incsearch
 set wildmenu
 set wildmode=longest:full,full:full
