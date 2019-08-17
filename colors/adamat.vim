@@ -21,6 +21,7 @@ hi ExtraWhitespace ctermbg=darkred guibg=#382424
 hi Ignore ctermfg=7
 hi CursorLine ctermfg=none cterm=none
 hi Visual cterm=none ctermbg=223 ctermfg=none
+hi Search cterm=none ctermbg=228 ctermfg=none
 hi NonText cterm=italic ctermfg=14
 hi SpellBad cterm=underline ctermbg=7
 hi SpellCap cterm=none ctermbg=7 ctermfg=11
@@ -58,6 +59,10 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd ctermbg=8
 hi IndentGuidesEven ctermbg=0
 hi! link SignColumn FoldColumn
+hi DiffAdd ctermbg=150 ctermfg=none
+hi DiffDelete ctermbg=217
+hi DiffText ctermbg=195 ctermfg=none
+hi DiffChange ctermbg=152 ctermfg=none
 "}}}
 
 let colors_name = "adamat"

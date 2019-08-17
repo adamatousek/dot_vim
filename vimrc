@@ -51,6 +51,10 @@ command! FSL FSSplitLeft
 
 colo adamat
 syntax enable
+" Colours for highlighting via :match
+hi Aux ctermbg=152
+hi AuxDim ctermbg=187
+hi AuxBright ctermbg=225
 
 let maplocalleader=','
 
