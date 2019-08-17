@@ -65,6 +65,8 @@ set wildmode=longest:full,full:full
 set showcmd
 set ttimeoutlen=50 "key code delay
 set smartindent
+set ignorecase
+set smartcase "ignore case in a pattern unless it contains an uppercase character
 set colorcolumn=80
 set expandtab
 set softtabstop=4
@@ -78,7 +80,7 @@ set mouse=a "Enable mouse for everything
 set wrap
 set lbr "Break at word boundary
 set sbr=↳\  "At the start of wrapped line
-set listchars=eol:$,extends:>,precedes:<,tab:>-,trail:.
+set listchars=eol:$,extends:>,precedes:<,tab:>-,trail:.,nbsp:~
 "set autochdir "cd to current file's directory
 set spellsuggest=fast
 set spelllang=en
