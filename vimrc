@@ -6,7 +6,7 @@ augroup vimrc
     au BufRead ~/src/divine/* so ~/src/divine/vimrc.local
 augroup end "augroup vimrc
 
-language messages C.UTF-8
+language messages C
 
 filetype plugin on
 filetype indent on

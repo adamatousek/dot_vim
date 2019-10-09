@@ -7,9 +7,11 @@
 " Modified: 2019 May 2
 
 " Solarized settings {{{
-"let &t_Co=256
+let &t_Co=16
 set background=light
-let g:solarized_termtrans=1
+let g:solarized_termtrans=0
+let g:solarized_italic=1
+let g:solarized_underline=1
 let g:solarized_termcolors=16    "default value is 16
 let g:solarized_degrade=0
 runtime colors/solarized.vim
