@@ -38,12 +38,21 @@ nmap <Leader>g :<C-U>Agrep -r<Space>
 nmap <Leader>] :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cn' : 'Anext')<CR>
 nmap <Leader>[ :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cp' : 'Aprev')<CR>
 
+" Highlighting searches
+nmap <Leader>c :match<CR>:nohlsearch<CR>
+nmap <Leader>m :match Aux //<Left>
+nmap <Leader>M :match AuxDim //<Left>
+
 " Repeat last : command
 nmap <Leader><Leader> @:
 
 " More reachable (and who uses Ex mode, anyway?)
 nmap Q  <C-w>
 nnoremap <C-w>Q <C-w><C-w>
+
+" Buffer switch
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bNext<CR>
 
 command! FSR FSSplitRight
 command! FSL FSSplitLeft
