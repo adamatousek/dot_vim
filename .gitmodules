@@ -51,3 +51,6 @@
 	path = pack/gen/start/vim-latex-objects
 	url = https://github.com/gibiansky/vim-latex-objects.git
 	ignore = untracked
+[submodule "pack/gen/start/xml.vim"]
+	path = pack/gen/start/xml.vim
+	url = https://github.com/othree/xml.vim.git

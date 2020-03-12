@@ -20,6 +20,7 @@ hi ExtraWhitespace ctermbg=darkred guibg=#382424
 "Customisations. this is spelll test, vim.
 hi Ignore ctermfg=7
 hi CursorLine ctermfg=none cterm=none
+hi CursorLineNr cterm=none
 hi Visual cterm=none ctermbg=223 ctermfg=none
 if &bg == 'dark' | hi Visual cterm=none ctermbg=60 ctermfg=none | endif
 hi Search cterm=none ctermbg=228 ctermfg=none

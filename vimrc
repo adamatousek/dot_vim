@@ -16,7 +16,6 @@ packadd matchit
 map <F7>   :UndotreeToggle<CR>
 map <F8>   :NERDTreeToggle<CR>
 map <S-F8> :NERDTreeFind<CR>
-map <F9>   <Leader>g
 map <F10>  :sh<CR>
 
 " Make Y constistent with C and D
@@ -34,9 +33,12 @@ cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
 " Agrep
-nmap <Leader>g :<C-U>Agrep -r<Space>
+nmap <F9> :<C-U>Agrep -r<Space>
+nmap <S-F9> :<C-U>Aclose<CR>
+nmap <Leader>g :<C-U>Aopen<CR>
 nmap <Leader>] :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cn' : 'Anext')<CR>
 nmap <Leader>[ :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cp' : 'Aprev')<CR>
+let g:agrep_default_flags = '-I --exclude-dir=.{git,svn} --exclude-dir=_darcs --exclude-dir="_build.*"'
 
 " Highlighting searches
 nmap <Leader>c :match<CR>:nohlsearch<CR>
@@ -112,6 +114,7 @@ set fillchars=vert:\ ,fold:\  "spaces
 set foldtext=
 set formatoptions+=1nj
 set directory=/tmp/.vimswap//,/tmp// "no swap files
+set complete-=i
 
 "GUI
 set guioptions-=T "no toolbar
