@@ -21,6 +21,7 @@ hi ExtraWhitespace ctermbg=darkred guibg=#382424
 hi Ignore ctermfg=7
 hi CursorLine ctermfg=none cterm=none
 hi Visual cterm=none ctermbg=223 ctermfg=none
+if &bg == 'dark' | hi Visual cterm=none ctermbg=60 ctermfg=none | endif
 hi Search cterm=none ctermbg=228 ctermfg=none
 hi NonText cterm=italic ctermfg=14
 hi SpellBad cterm=underline ctermbg=7
@@ -29,8 +30,13 @@ hi SpellRare cterm=underline ctermbg=none ctermfg=11
 hi TabLine cterm=none ctermfg=8 ctermbg=10
 hi TabLineFill cterm=none ctermfg=14 ctermbg=10
 hi TabLineSel cterm=none ctermfg=14 ctermbg=8
+if &bg == 'dark'
+    hi TabLineSel cterm=none ctermfg=12 ctermbg=13
+    hi TabLine cterm=none ctermfg=14 ctermbg=0
+    hi TabLineFill cterm=none ctermfg=1 ctermbg=0
+endif
 hi Title  cterm=none ctermfg=3
-hi Folded cterm=underline ctermfg=10 ctermbg=7
+"hi Folded cterm=underline ctermfg=10 ctermbg=7
 hi FoldColumn ctermfg=magenta
 hi Statement cterm=none ctermfg=red
 "hi link Structure Statement
