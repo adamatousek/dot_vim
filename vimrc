@@ -113,7 +113,7 @@ set cino+=N-s
 set autowrite
 set makeprg=cd\ build;\ make\ EXTRA_CFLAGS=-fcolor-diagnostic
 set textwidth=80
-set statusline=\ %f%m%r%h%q%w\ %=%(%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y%)\ %([%l,%v][%p%%]\ %)
+set statusline=\ %f%m%r%h%q%w%{gutentags#statusline()}\ %=%(%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y%)\ %([%l,%v][%p%%]\ %)
 set clipboard=autoselect,unnamed
 set nojoinspaces
 set splitbelow

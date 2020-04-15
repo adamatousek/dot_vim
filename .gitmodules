@@ -54,3 +54,6 @@
 [submodule "pack/gen/start/xml.vim"]
 	path = pack/gen/start/xml.vim
 	url = https://github.com/othree/xml.vim.git
+[submodule "pack/gen/opt/vim-gutentags"]
+	path = pack/gen/opt/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
