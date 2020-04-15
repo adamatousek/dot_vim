@@ -8,7 +8,6 @@
 
 " Solarized settings {{{
 "let &t_Co=256
-set background=light
 let g:solarized_termtrans=1
 let g:solarized_termcolors=16    "default value is 16
 let g:solarized_degrade=0
