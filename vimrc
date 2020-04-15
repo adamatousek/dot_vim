@@ -26,7 +26,14 @@ noremap! <C-b> <C-r>*
 cnoremap <C-a> <Home>
 tnoremap <C-s> <C-w>N
 inoremap <S-Tab> <C-v><C-i>
+inoremap <C-c> <C-x>
 nnoremap <CR> o<Esc>
+noremap! <C-j> <Esc>j
+nnoremap ; :
+nnoremap - ^
+nnoremap _ ;
+nnoremap ť ;
+nnoremap Ť ,
 
 " Left and right move cursor, not wildmenu selection
 cnoremap <Left> <Space><BS><Left>
@@ -38,7 +45,7 @@ nmap <S-F9> :<C-U>Aclose<CR>
 nmap <Leader>g :<C-U>Aopen<CR>
 nmap <Leader>] :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cn' : 'Anext')<CR>
 nmap <Leader>[ :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cp' : 'Aprev')<CR>
-let g:agrep_default_flags = '-I --exclude-dir=.{git,svn} --exclude-dir=_darcs --exclude-dir="_build.*"'
+let g:agrep_default_flags = '-I --exclude-dir=.{git,svn} --exclude-dir=_darcs --exclude-dir="_build*"'
 
 " Highlighting searches
 nmap <Leader>c :match<CR>:nohlsearch<CR>
@@ -59,6 +66,7 @@ nnoremap <C-p> :bNext<CR>
 command! FSR FSSplitRight
 command! FSL FSSplitLeft
 
+set background=light
 colo adamat
 syntax enable
 " Colours for highlighting via :match
