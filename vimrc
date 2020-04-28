@@ -4,6 +4,9 @@ augroup vimrc
     au BufWritePost .vimrc so %
     " Project-dependent things
     au BufRead ~/src/divine/* so ~/src/divine/vimrc.local
+
+    au User GutentagsUpdating redrawstatus
+    au User GutentagsUpdated redrawstatus
 augroup end "augroup vimrc
 
 language messages C.UTF-8
@@ -66,6 +69,8 @@ nnoremap <C-p> :bNext<CR>
 command! FSR FSSplitRight
 command! FSL FSSplitLeft
 
+command! Gutentags packadd vim-gutentags
+
 set background=light
 colo adamat
 syntax enable
@@ -113,7 +118,7 @@ set cino+=N-s
 set autowrite
 set makeprg=cd\ build;\ make\ EXTRA_CFLAGS=-fcolor-diagnostic
 set textwidth=80
-set statusline=\ %f%m%r%h%q%w%{gutentags#statusline()}\ %=%(%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y%)\ %([%l,%v][%p%%]\ %)
+set statusline=\ %f%m%r%h%q%w%{Tagging()}\ %=%(%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y%)\ %([%l,%v][%p%%]\ %)
 set clipboard=autoselect,unnamed
 set nojoinspaces
 set splitbelow
@@ -127,6 +132,13 @@ set complete-=i
 "GUI
 set guioptions-=T "no toolbar
 set guioptions-=m "no menubar
+
+function! Tagging()
+    if exists('*gutentags#statusline')
+        return gutentags#statusline('[',']')
+    endif
+    return ""
+endfunction
 
 " Fold text; based on https://dhruvasagar.com/2013/03/28/vim-better-foldtext
 function! NeatFoldText()
