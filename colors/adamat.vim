@@ -73,4 +73,7 @@ hi DiffChange ctermbg=152 ctermfg=none
 
 let colors_name = "adamat"
 
+let g:limelight_conceal_ctermfg = &bg=='dark' ? 10 : 14
+let g:goyo_bg = &bg=='dark' ? 8 : 15
+
 " vim: fdm=marker

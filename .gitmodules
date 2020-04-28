@@ -57,3 +57,9 @@
 [submodule "pack/gen/opt/vim-gutentags"]
 	path = pack/gen/opt/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "pack/gen/opt/goyo"]
+	path = pack/gen/opt/goyo
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule "pack/gen/opt/limelight"]
+	path = pack/gen/opt/limelight
+	url = https://github.com/junegunn/limelight.vim.git

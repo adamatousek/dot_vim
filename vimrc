@@ -200,6 +200,27 @@ if $USER ==# "root"
     hi StatusLine ctermfg=red
 endif
 
+" Distraction-free mode
+function! InitDFM()
+    packadd goyo
+    packadd limelight
+    autocmd! User GoyoEnter call DFMon()
+    autocmd! User GoyoLeave call DFMoff()
+    :Goyo
+endfunction
+
+function! DFMon()
+    Limelight
+    set scrolloff=10
+endfunction
+
+function! DFMoff()
+    Limelight!
+    set scrolloff=0
+endfunction
+
+command! DistractionFree call InitDFM()
+
 " Hide answers in IS questionaries
 "au BufRead *.qdef sy region VertSplit start="^:" end="ok$"
 
