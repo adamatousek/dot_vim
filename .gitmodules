@@ -30,15 +30,6 @@
 	path = pack/org/opt/vim-orgmode
 	url = https://github.com/jceb/vim-orgmode.git
 	ignore = untracked
-[submodule "pack/coq/start/coq.vim"]
-	path = pack/coq/start/coq.vim
-	url = https://github.com/jvoorhis/coq.vim
-	ignore = untracked
-[submodule "pack/coq/start/coq-au-vim"]
-	path = pack/coq/start/coq-au-vim
-	url = git@framagit.org:adamatousek/coq-au-vim.git
-	branch = local
-	ignore = untracked
 [submodule "pack/org/opt/speeddating"]
 	path = pack/org/opt/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
