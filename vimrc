@@ -3,16 +3,27 @@ augroup vimrc
     au VimEnter * let $VRSTVENI = $VRSTVENI.'/vim'
     au BufWritePost .vimrc so %
     " Project-dependent things
-    au BufRead ~/src/divine/* so ~/src/divine/vimrc.local
+    for prefix in ['~/src/divine', '~/src/frag', '~/muni/pb161/reviews' ]
+        exec 'au BufRead ' . prefix . '/* so ' . prefix . '/vimrc.local'
+    endfor
+
+    au BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+    au CmdWinEnter * nnoremap <buffer> <CR> <CR>
 
     au User GutentagsUpdating redrawstatus
     au User GutentagsUpdated redrawstatus
 augroup end "augroup vimrc
 
+let maplocalleader=','
+let mapleader='\'
+
 language messages C.UTF-8
 
 filetype plugin on
 filetype indent on
+
+" jump to tag
+noremap gc <C-]>
 
 packadd matchit
 
@@ -20,6 +31,10 @@ map <F7>   :UndotreeToggle<CR>
 map <F8>   :NERDTreeToggle<CR>
 map <S-F8> :NERDTreeFind<CR>
 map <F10>  :sh<CR>
+
+" Ctrl-Backspace
+noremap <C-?> <C-w>
+inoremap <C-?> <C-w>
 
 " Make Y constistent with C and D
 nnoremap Y y$
@@ -30,24 +45,27 @@ cnoremap <C-a> <Home>
 tnoremap <C-s> <C-w>N
 inoremap <S-Tab> <C-v><C-i>
 inoremap <C-c> <C-x>
+" see also the augroup above
 nnoremap <CR> o<Esc>
 noremap! <C-j> <Esc>j
 nnoremap ; :
-nnoremap - ^
-nnoremap _ ;
-nnoremap ť ;
-nnoremap Ť ,
+noremap - ;
+noremap _ ,
+noremap ť ;
+noremap Ť ,
 
 " Left and right move cursor, not wildmenu selection
 cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
 " Agrep
-nmap <F9> :<C-U>Agrep -r<Space>
+nmap <F9> :<C-U>Agrep --exclude-from=$HOME/grep_exclude -rs<Space>
+nmap <F3> <F9>
+nmap <S-F3> <S-F9>
 nmap <S-F9> :<C-U>Aclose<CR>
 nmap <Leader>g :<C-U>Aopen<CR>
-nmap <Leader>] :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cn' : 'Anext')<CR>
-nmap <Leader>[ :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cp' : 'Aprev')<CR>
+nmap <Leader>n :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cn' : 'Anext')<CR>
+nmap <Leader>N :<C-U>exe v:count1.(bufwinnr('Agrep') == -1 ? 'cp' : 'Aprev')<CR>
 let g:agrep_default_flags = '-I --exclude-dir=.{git,svn} --exclude-dir=_darcs --exclude-dir="_build*"'
 
 " Highlighting searches
@@ -63,8 +81,8 @@ nmap Q  <C-w>
 nnoremap <C-w>Q <C-w><C-w>
 
 " Buffer switch
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bNext<CR>
+nnoremap <Leader><C-n> :bnext<CR>
+nnoremap <Leader><C-p> :bNext<CR>
 
 command! FSR FSSplitRight
 command! FSL FSSplitLeft
@@ -78,8 +96,6 @@ syntax enable
 hi Aux ctermbg=152
 hi AuxDim ctermbg=187
 hi AuxBright ctermbg=225
-
-let maplocalleader=','
 
 let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
@@ -197,15 +213,7 @@ let g:surround_indent = 1
 let g:signify_disable_by_default = 1
 let g:signify_vcs_list = [ 'git', 'darcs' ]
 
-let g:wordmotion_mappings = {
-\ 'w' : '<M-w>',
-\ 'b' : '<M-b>',
-\ 'e' : '<M-e>',
-\ 'ge' : 'g<M-e>',
-\ 'aw' : 'a<M-w>',
-\ 'iw' : 'i<M-w>',
-\ '<C-R><C-W>' : '<C-R><M-w>'
-\ }
+let g:wordmotion_prefix = '<Leader>'
 
 " Root
 if $USER ==# "root"
