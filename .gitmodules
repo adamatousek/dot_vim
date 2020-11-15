@@ -54,3 +54,6 @@
 [submodule "pack/gen/opt/limelight"]
 	path = pack/gen/opt/limelight
 	url = https://github.com/junegunn/limelight.vim.git
+[submodule "pack/gen/start/vim-nftables"]
+	path = pack/gen/start/vim-nftables
+	url = https://github.com/nfnty/vim-nftables.git
