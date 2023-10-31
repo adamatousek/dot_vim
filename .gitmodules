@@ -57,3 +57,18 @@
 [submodule "pack/gen/start/vim-nftables"]
 	path = pack/gen/start/vim-nftables
 	url = https://github.com/nfnty/vim-nftables.git
+[submodule "pack/gen/start/vim-repeat"]
+	path = pack/gen/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "pack/gen/start/vim-svelte"]
+	path = pack/gen/start/vim-svelte
+	url = https://github.com/evanleck/vim-svelte.git
+[submodule "pack/gen/start/vim-javascript"]
+	path = pack/gen/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "pack/gen/start/html5.vim"]
+	path = pack/gen/start/html5.vim
+	url = https://github.com/othree/html5.vim.git
+[submodule "pack/gen/start/fzf.vim"]
+	path = pack/gen/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
