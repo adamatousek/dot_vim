@@ -1,16 +1,21 @@
-" Name:     Adamat's customised selenized vim colorscheme
-" Created:  In the evening
-" Modified: 2023 Oct 27
+" Name:     Adamat's customised solarized vim colorscheme
+" Author:   Ethan Schoonover <es@ethanschoonover.com>
+" URL:      http://ethanschoonover.com/solarized
+"           (see this url for latest release & screenshots)
+" License:  OSI approved MIT license (see end of this file)
+" Created:  In the morning
+" Modified: 2019 May 2
 
-" Selenized settings {{{
-let s:oldtco=&t_Co
-let &t_Co=16
-runtime colors/selenized.vim
-let &t_Co=s:oldtco
+" Solarized settings {{{
+"let &t_Co=256
+let g:solarized_termtrans=1
+let g:solarized_termcolors=16    "default value is 16
+let g:solarized_degrade=0
+runtime colors/solarized.vim
 " }}}
 
 let s:italic = ''
-let s:hlbg = &bg == 'dark' ? 7 : 0
+let s:hlbg = &bg == 'dark' ? 0 : 7
 
 " Changed colours {{{
 hi ExtraWhitespace ctermbg=darkred guibg=#382424
@@ -22,14 +27,13 @@ hi Visual cterm=none ctermbg=223 ctermfg=none
 if &bg == 'dark' | hi Visual cterm=none ctermbg=17 ctermfg=none | endif
 hi Search cterm=none ctermbg=228 ctermfg=none
 exe 'hi NonText ctermfg=14' . s:italic
-hi SpellBad cterm=underline ctermbg=0
-hi SpellCap cterm=none ctermfg=11 ctermbg=0
+exe 'hi SpellBad cterm=underline ctermbg=' . s:hlbg
+exe 'hi SpellCap cterm=none ctermfg=11 ctermbg=' . s:hlbg
 hi SpellRare cterm=underline ctermbg=none ctermfg=11
 hi Title  cterm=none ctermfg=3
-hi Folded cterm=underline
+"hi Folded cterm=underline ctermfg=10 ctermbg=7
 hi FoldColumn ctermfg=magenta
 hi Statement cterm=none ctermfg=red
-hi MatchParen ctermfg=blue cterm=inverse
 "hi link Structure Statement
 "hi Label ctermfg=red
 hi Operator ctermfg=darkred
